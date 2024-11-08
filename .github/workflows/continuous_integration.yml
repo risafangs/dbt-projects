@@ -38,17 +38,17 @@ jobs:
 
       # TODO: update for your unique S3 bucket name
       # TODO: update your GitHub secrets to include AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
-      - name: Grab production manifest from S3
-        run: |
-          aws s3 cp s3://vhol-datafold-dbt-prod-manifest/manifest.json ./manifest.json
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-west-2
+      # - name: Grab production manifest from S3
+      #  run: |
+      #    aws s3 cp s3://vhol-datafold-dbt-prod-manifest/manifest.json ./manifest.json
+      #  env:
+      #    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #    AWS_REGION: us-west-2
 
       - name: dbt build
         run: dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
-        env: # TODO: update your GitHub secrets to include SNOWFLAKE_ACCOUNT, SNOWFLAKE_USER, SNOWFLAKE_PASSWORD, SNOWFLAKE_ROLE
+        env: # TODO: update your GitHub secrets to include TOKEN
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-          SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
+          SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
 
