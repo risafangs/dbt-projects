@@ -1,0 +1,55 @@
+  - name: source__pokemon
+    description: "Cleansed Pokemon data"
+    columns:
+      - name: name
+        data_type: varchar
+        description: "Name of Pokemon"
+
+      - name: generation
+        data_type: bigint
+        description: "Integer representing the generation (game) that Pokemon belongs to"
+
+      - name: number
+        data_type: bigint
+        description: "In-game species number"
+
+      - name: type_1
+        data_type: varchar
+        description: ""
+
+      - name: type_2
+        data_type: varchar
+        description: ""
+
+      - name: attack
+        data_type: bigint
+        description: ""
+
+      - name: defense
+        data_type: bigint
+        description: ""
+
+      - name: hp
+        data_type: bigint
+        description: ""
+
+      - name: special_attack
+        data_type: bigint
+        description: ""
+
+      - name: special_defense
+        data_type: bigint
+        description: ""
+
+      - name: speed
+        data_type: bigint
+        description: ""
+
+      - name: total
+        data_type: bigint
+        description: ""
+
+      - name: is_legendary
+        data_type: boolean
+        description: "True or false value corresponding to whether the Pokemon is considered to be legendary in game"
+
