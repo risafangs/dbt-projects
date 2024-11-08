@@ -1,0 +1,15 @@
+pikachu_statistics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      schema: "{{ env_var('SCHEMA') | as_text }}"
+      path: "md:my_db?motherduck_token={{ env_var('MOTHERDUCK_TOKEN') | as_text }}"
+      threads: 4
+
+    prod:
+      type: duckdb
+      schema: main
+      path: "md:my_db?motherduck_token={{ env_var('MOTHERDUCK_TOKEN') }}"
+      threads: 4
+
