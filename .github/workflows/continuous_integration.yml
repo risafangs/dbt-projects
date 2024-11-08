@@ -1,4 +1,4 @@
-name: CI
+name: continuous_integration_check
 
 on:
   pull_request:
