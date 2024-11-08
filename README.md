@@ -1,4 +1,8 @@
-Welcome to your new dbt project!
+`pikachu_statistics` is another attempt to create a sample dbt project with data that is vaguely interesting.
+
+**Data warehouse**: MotherDuck
+**Transformation**: dbt
+**Business Intelligence**: Evidence
 
 ### Using the starter project
 
