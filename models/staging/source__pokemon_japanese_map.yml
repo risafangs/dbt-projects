@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: source__pokemon_japanese_map
+    description: "Mapping of English to Japanese names for all Pokemon, includes generation 9 from Bulbapedia"
+    columns:
+      - name: ndex
+        data_type: varchar
+        description: ""
+        data_tests:
+          - not_null
+          - unique
+
+      - name: english_name
+        data_type: varchar
+        description: ""
+
+      - name: japanese_name
+        data_type: varchar
+        description: ""
+
+      - name: romanized_name
+        data_type: varchar
+        description: ""
+
+

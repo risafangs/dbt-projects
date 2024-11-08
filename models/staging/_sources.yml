@@ -7,4 +7,4 @@ sources:
     loader: manual
     tables:
       - name: pokemon
-        description: "Raw source with all Pokemon stats"
+      - name: pokemon_japanese_map

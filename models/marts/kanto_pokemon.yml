@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: kanto_pokemon
+    description: "Final table with only Pokemon from generation 1"
+

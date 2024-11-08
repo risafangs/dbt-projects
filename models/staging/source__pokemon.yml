@@ -1,9 +1,15 @@
+version: 2
+
+models:
   - name: source__pokemon
-    description: "Cleansed Pokemon data"
+    description: "Cleansed Pokemon data for generations 1-6"
     columns:
       - name: name
         data_type: varchar
         description: "Name of Pokemon"
+        data_tests:
+          - not_null
+          - unique
 
       - name: generation
         data_type: bigint
@@ -12,6 +18,8 @@
       - name: number
         data_type: bigint
         description: "In-game species number"
+        data_tests:
+          - not_null
 
       - name: type_1
         data_type: varchar
