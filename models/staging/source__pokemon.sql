@@ -1,7 +1,7 @@
 with source as (
 
     select * from {{ source('raw', 'pokemon') }}
-
+    {{ limit_dev_data() }} 
 )
 
 , renamed as (

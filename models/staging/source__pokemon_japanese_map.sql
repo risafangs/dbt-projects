@@ -2,6 +2,7 @@
 with source as (
 
     select * from {{ source('raw', 'pokemon_japanese_map') }}
+    {{ limit_dev_data() }}
 
 )
 
