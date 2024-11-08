@@ -4,7 +4,7 @@ pikachu_statistics:
     dev:
       type: duckdb
       schema: "{{ env_var('SCHEMA') | as_text }}"
-      path: "md:my_db?motherduck_token={{ env_var('MOTHERDUCK_TOKEN') }}"
+      path: "md:my_db?motherduck_token={{ env_var('MOTHERDUCK_TOKEN') | as_text }}"
       threads: 4
 
     prod:
