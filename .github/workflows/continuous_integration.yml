@@ -47,7 +47,7 @@ jobs:
       #    AWS_REGION: us-west-2
 
       - name: dbt build
-        run: dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
+        run: dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./.github/
         env: # TODO: update your GitHub secrets to include TOKEN
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
           SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
