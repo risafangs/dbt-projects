@@ -23,4 +23,18 @@ models:
         data_type: varchar
         description: ""
 
+unit_tests:
+  - name: test_index_is_number
+    model: source__pokemon_japanese_map
+    given:
+      - input: source('raw', 'pokemon_japanese_map')
+        rows:
+          - {ndex: '#1'}
+          - {ndex: '#72'}
+          - {ndex: '180#'}
 
+    expect:
+      rows:
+        - {ndex: '1'}
+        - {ndex: '72'}
+        - {ndex: '180'}
