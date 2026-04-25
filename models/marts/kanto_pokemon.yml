@@ -20,6 +20,10 @@ models:
         description: "In-game species number"
         data_tests:
           - not_null
+        meta:
+          metrics:
+            total_pokemon:
+              type: count_distinct
 
       - name: type_1
         data_type: varchar
