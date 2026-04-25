@@ -20,6 +20,13 @@ models:
         description: "In-game species number"
         data_tests:
           - not_null
+        meta:
+          metrics:
+            number_total_pokemon:
+              label: Total Pokemon
+              description: "Count distinct of Number on the table Source pokemon "
+              type: count_distinct
+              filters: []
 
       - name: type_1
         data_type: varchar
@@ -59,5 +66,5 @@ models:
 
       - name: is_legendary
         data_type: boolean
-        description: "True or false value corresponding to whether the Pokemon is considered to be legendary in game"
-
+        description: "True or false value corresponding to whether the Pokemon is
+          considered to be legendary in game"
